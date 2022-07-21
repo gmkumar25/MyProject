@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="17" passed="17" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-07-20T18:10:05 IST" name="Command line suite" finished-at="2022-07-20T18:16:54 IST" duration-ms="408178">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:StepDefinitions.TestRunner2@6e75aa0d]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:StepDefinitions.TestRunner@11dc3715]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2022-07-20T18:10:05 IST" name="Command line test" finished-at="2022-07-20T18:16:54 IST" duration-ms="408178">
+      <class name="StepDefinitions.TestRunner2">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:StepDefinitions.TestRunner2@6e75aa0d]" started-at="2022-07-20T18:14:59 IST" name="setUpClass" finished-at="2022-07-20T18:14:59 IST" duration-ms="53" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@abf688e]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:StepDefinitions.TestRunner2@6e75aa0d]" started-at="2022-07-20T18:14:59 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-07-20T18:16:54 IST" duration-ms="114456" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["TC03_Verify that the user is able to validate the presence of graphical data under WAN Performance Page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["This feature covers test scenarios under the WAN-page of Neuron_Fleet application"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:StepDefinitions.TestRunner2@6e75aa0d]" started-at="2022-07-20T18:16:54 IST" name="tearDownClass" finished-at="2022-07-20T18:16:54 IST" duration-ms="49" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- StepDefinitions.TestRunner2 -->
+      <class name="StepDefinitions.TestRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:StepDefinitions.TestRunner@11dc3715]" started-at="2022-07-20T18:10:05 IST" name="setUpClass" finished-at="2022-07-20T18:10:06 IST" duration-ms="533" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@abf688e]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:StepDefinitions.TestRunner@11dc3715]" started-at="2022-07-20T18:10:06 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-07-20T18:13:00 IST" duration-ms="174071" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["TC08_Verify that the user is able to validate that data is displayed in the QOE Score Analysis Page Load Time section of QoeProbe Page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["This feature covers test scenarios under the QoeProbe-page of Neuron_Fleet application"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:StepDefinitions.TestRunner@11dc3715]" started-at="2022-07-20T18:10:06 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-07-20T18:12:39 IST" duration-ms="153027" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["TC01_Verify that the user is able to login into Neuron Fleet application"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["This feature covers test scenarios under the Home-page of Neuron_Fleet application"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:StepDefinitions.TestRunner@11dc3715]" started-at="2022-07-20T18:10:06 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-07-20T18:13:12 IST" duration-ms="185521" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["TC09_Verify that the user is able to validate that data is displayed in the QOE probe Metrics section of QoeProbe Page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["This feature covers test scenarios under the QoeProbe-page of Neuron_Fleet application"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:StepDefinitions.TestRunner@11dc3715]" started-at="2022-07-20T18:10:06 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-07-20T18:13:11 IST" duration-ms="184640" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["TC04_Verify that the user is able to validate the Dropdown filter options in the Sites section of QoeProbe Page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["This feature covers test scenarios under the QoeProbe-page of Neuron_Fleet application"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:StepDefinitions.TestRunner@11dc3715]" started-at="2022-07-20T18:10:06 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-07-20T18:12:43 IST" duration-ms="157272" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["TC03_Verify that the user is able to validate the colour coding of data in the Sites section of QoeProbe Page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["This feature covers test scenarios under the QoeProbe-page of Neuron_Fleet application"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:StepDefinitions.TestRunner@11dc3715]" started-at="2022-07-20T18:10:06 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-07-20T18:12:50 IST" duration-ms="164274" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["TC05_Verify that the user is able to validate the Quick Select Filter options in the Sites section of QoeProbe Page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["This feature covers test scenarios under the QoeProbe-page of Neuron_Fleet application"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:StepDefinitions.TestRunner@11dc3715]" started-at="2022-07-20T18:10:06 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-07-20T18:13:05 IST" duration-ms="179098" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["TC07_Verify that the user is able to validate that data is displayed in the QOE Score Analysis section of QoeProbe Page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["This feature covers test scenarios under the QoeProbe-page of Neuron_Fleet application"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:StepDefinitions.TestRunner@11dc3715]" started-at="2022-07-20T18:10:06 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-07-20T18:13:12 IST" duration-ms="185537" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["TC02_Verify that the user is able to validate the presence of data in the Sites section of QoeProbe Page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["This feature covers test scenarios under the QoeProbe-page of Neuron_Fleet application"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:StepDefinitions.TestRunner@11dc3715]" started-at="2022-07-20T18:10:06 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-07-20T18:12:50 IST" duration-ms="163543" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["TC01_Verify that the user is able to validate the QoeProbe Page UI of Neuron Fleet application"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["This feature covers test scenarios under the QoeProbe-page of Neuron_Fleet application"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:StepDefinitions.TestRunner@11dc3715]" started-at="2022-07-20T18:10:06 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-07-20T18:12:50 IST" duration-ms="163793" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["TC06_Verify that the user is able to validate the Default StartDate and EndDate Filter options in the Sites section of QoeProbe Page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["This feature covers test scenarios under the QoeProbe-page of Neuron_Fleet application"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:StepDefinitions.TestRunner@11dc3715]" started-at="2022-07-20T18:12:39 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-07-20T18:14:42 IST" duration-ms="123214" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["TC01_Verify that the user is able to validate the RF Statistics Page UI of Neuron Fleet application"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["This feature covers test scenarios under the RF System-page of Neuron_Fleet application"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:StepDefinitions.TestRunner@11dc3715]" started-at="2022-07-20T18:12:43 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-07-20T18:14:47 IST" duration-ms="124137" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["TC02_Verify that the user is able to validate the Quick Select Filter options in the RF Statistics Page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["This feature covers test scenarios under the RF System-page of Neuron_Fleet application"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:StepDefinitions.TestRunner@11dc3715]" started-at="2022-07-20T18:12:50 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-07-20T18:14:39 IST" duration-ms="109507" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["TC03_Verify that the user is able to validate the Default StartDate and EndDate Filter options in the RF Statistics Page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["This feature covers test scenarios under the RF System-page of Neuron_Fleet application"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:StepDefinitions.TestRunner@11dc3715]" started-at="2022-07-20T18:12:50 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-07-20T18:14:53 IST" duration-ms="122826" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["TC04_Verify that the user is able to validate that data is displayed in the RF Statistics Page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["This feature covers test scenarios under the RF System-page of Neuron_Fleet application"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:StepDefinitions.TestRunner@11dc3715]" started-at="2022-07-20T18:12:50 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-07-20T18:14:54 IST" duration-ms="123662" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["TC01_Verify that the user is able to validate the WAN Performance Page UI of Neuron Fleet application"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["This feature covers test scenarios under the WAN-page of Neuron_Fleet application"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:StepDefinitions.TestRunner@11dc3715]" started-at="2022-07-20T18:13:00 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-07-20T18:14:59 IST" duration-ms="118862" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["TC02_Verify that the user is able to validate the presence of various graphs under WAN Performance Page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["This feature covers test scenarios under the WAN-page of Neuron_Fleet application"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:StepDefinitions.TestRunner@11dc3715]" started-at="2022-07-20T18:14:59 IST" name="tearDownClass" finished-at="2022-07-20T18:14:59 IST" duration-ms="104" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- StepDefinitions.TestRunner -->
+    </test> <!-- Command line test -->
+  </suite> <!-- Command line suite -->
+</testng-results>
