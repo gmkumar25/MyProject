@@ -10,6 +10,9 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
 import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Scenario;
@@ -25,20 +28,38 @@ import io.cucumber.java.Scenario;
 public class TestBase {
 	WebDriver driver;
 	String BrowserType;
+	String HeadlessMode;
 
 	public WebDriver openBrowser() throws IOException {
 		BufferedReader reader = new BufferedReader(new FileReader(System.getProperty("user.dir")+"\\src\\test\\resources\\Config\\App_Config.properties"));
 		Properties properties = new Properties();
 		properties.load(reader);
 		BrowserType = properties.getProperty("BrowserType");
+		HeadlessMode = properties.getProperty("HeadlessMode");
 		if(driver == null) {
 			if(BrowserType.equalsIgnoreCase("chrome")){
 				String projectPath = System.getProperty("user.dir");
 				System.setProperty("webdriver.chrome.driver", projectPath+"\\src\\test\\resources\\Drivers\\chromedriver.exe");
-				driver = new ChromeDriver();
-				driver.manage().window().maximize();
-				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+				if(HeadlessMode.equalsIgnoreCase("true")) {
+					ChromeOptions chromeOptions = new ChromeOptions();
+					chromeOptions.addArguments("--headless");
+					driver = new ChromeDriver(chromeOptions);
+				}
+				else if(HeadlessMode.equalsIgnoreCase("false")) {
+					driver = new ChromeDriver();
+				}
 			}
+			
+			else if(BrowserType.equalsIgnoreCase("firefox")){
+				String projectPath = System.getProperty("user.dir");
+				System.setProperty("webdriver.gecko.driver", projectPath+"\\src\\test\\resources\\Drivers\\geckodriver.exe");
+				driver = new FirefoxDriver();
+			}
+
+
+driver.manage().window().maximize();
+				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			
 		}
 		return driver;
 	}
@@ -52,6 +73,6 @@ public class TestBase {
 		catch(Exception e) {
 		}
 	}
-	
-	
+
+
 }
