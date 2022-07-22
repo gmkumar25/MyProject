@@ -17,7 +17,7 @@ Feature: This feature covers test scenarios under the WAN-page of Neuron_Fleet a
     When I navigate to the Wan Performance page
     Then I should be able to validate the presence of various graphs under WAN Performance Page
     
-  @smoke1
+  @smoke1   @smoke
   Scenario: TC03_Verify that the user is able to validate the presence of graphical data under WAN Performance Page
     Given I access the Neuron Fleet application
     When I navigate to the Wan Performance page
