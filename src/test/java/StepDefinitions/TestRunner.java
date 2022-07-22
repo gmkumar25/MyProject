@@ -8,7 +8,8 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
         plugin = {"pretty",
                 "html:target/cucumber-reports/TestReport.html",
-                "json:target/cucumber-reports/TestReport.json"
+                "json:target/cucumber-reports/TestReport.json",
+                "rerun:target/failedscenariosrerun.txt"
                               
         },
         features = {"src/test/resources/Features"},
