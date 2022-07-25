@@ -123,6 +123,8 @@ public class RFSystemPage {
 				String Actual_EndDateTime = driver.findElement(input_EndDate).getAttribute("value");
 				String[] Actual_EndDate_Split = Actual_EndDateTime.split("@");
 				String Actual_EndDate = Actual_EndDate_Split[0].trim();
+				Actions actions = new Actions(driver);
+				actions.moveToElement(driver.findElement(btn_Apply)).perform();
 				DevTools devTools = ((ChromeDriver) driver).getDevTools();
 				devTools.createSession();
 				devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
