@@ -1,13 +1,18 @@
 package PageObjects;
 
+import java.time.Clock;
 import java.time.Duration;
+import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
+import org.json.simple.JSONObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -22,6 +27,15 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+
+import io.cucumber.core.internal.com.fasterxml.jackson.core.JsonProcessingException;
+import io.cucumber.core.internal.com.fasterxml.jackson.databind.JsonMappingException;
+import io.cucumber.core.internal.com.fasterxml.jackson.databind.ObjectMapper;
+import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
+import io.restassured.response.ResponseBody;
+import io.restassured.specification.RequestSpecification;
 
 public class QoeProbePage {
 	WebDriver driver;
@@ -299,5 +313,90 @@ public class QoeProbePage {
 		waitForPageLoad();
 		Assert.assertTrue((driver.getPageSource().contains("The time it took from SSL Handshake until the connect to the remote host was completed")),"TCP Connection Time is not selected");
 	}
+	
+	public void prepareQoeProbeAPI_Details() {
+		System.out.println("*** Let us test the API of QOE Score Analysis");
+	}
+	
+	public void validateQoeScoreAnalysisAPI( String NeuronFleetName, String Username, String Password) {
+		String baseURI = null;
+		if(NeuronFleetName.equalsIgnoreCase("horizon")) {
+			baseURI = "https://horizon.neuron.espacenetworks.io/neuron-api/authentication/api/user/login?username="+Username+"&password="+Password;
+		}
+		else if(NeuronFleetName.equalsIgnoreCase("valor")) {
+			baseURI = "https://valor.neuron.espacenetworks.io/neuron-api/authentication/api/user/login?username="+Username+"&password="+Password;
+		}
+		else if(NeuronFleetName.equalsIgnoreCase("freedom")) {
+			baseURI = "https://freedom.neuron.espacenetworks.io/neuron-api/authentication/api/user/login?username="+Username+"&password="+Password;
+		}
+		RestAssured.baseURI ="https://horizon.neuron.espacenetworks.io/neuron-api/authentication/api/user/login?username=admin&password=neuron$22"; 
+	    RequestSpecification request = RestAssured.given(); 
+	    JSONObject requestParams = new JSONObject();
+	    requestParams.put("username", "admin");
+	    requestParams.put("password", "neuron$22"); 
+	    request.body(requestParams.toJSONString());
+		Response response = request.relaxedHTTPSValidation().accept(ContentType.JSON)
+                .contentType(ContentType.JSON).post();
+	    ResponseBody body = response.getBody();
+	    System.out.println("*** Initial Response of login API " +body.asString());
+	    String RefreshToken = response.jsonPath().getString("refreshToken");
+	    String AccessToken = response.jsonPath().getString("accessToken");
+	    
+	    System.out.println("***  RefreshToken is :" +RefreshToken+ "  *** Access Token is :" +AccessToken);
+
+	    System.out.println("****************** -------- *****************************");
+	    
+	    RestAssured.baseURI = "https://horizon.neuron.espacenetworks.io/neuron-api/dpi/api/activeProbe/getAggregated?username=admin&password=neuron";
+	    RequestSpecification request1 = RestAssured.given(); 
+	    
+	    //Find End Date
+	    Instant instant = Instant.now(Clock.systemUTC());
+	    String data = instant.toString();
+	    String EndDate = data.substring(0,19);
+	    
+	    //find Start date
+	    String prevDate = instant.minusSeconds(3600).toString();
+	    String StartDate = prevDate.substring(0,19);
+	    
+	    JSONObject requestParams1 = new JSONObject();
+	    requestParams1.put("fromTimestamp", StartDate);
+	    requestParams1.put("toTimestamp", EndDate);
+	    requestParams1.put("configSiteId", "1");
+	    requestParams1.put("configCustomerId", "1");
+	    request1.body(requestParams1.toJSONString());
+	    
+	    Response response1 = request1.header("authorization", "Bearer "+AccessToken).relaxedHTTPSValidation().accept(ContentType.JSON)
+                .contentType(ContentType.JSON).post();
+	    ResponseBody body1 = response1.getBody();
+	    System.out.println("**************** Active QOE Data ***************");
+	    System.out.println("*** Response Contents :" +body1.asString());
+	    
+	    try {
+			ObjectMapper mapper = new ObjectMapper();
+			HashMap map = mapper.readValue(response1.asString(), HashMap.class);
+			HashMap responseData = (HashMap) map.get("data");  //here data is the root node found in the response
+			
+			responseData.forEach((k,v)->{
+				System.out.println("*** Key of the Response Map is :" +k);
+				System.out.println("*** Value of the Response Map is :" +v.toString());
+				System.out.println("**************** Now Printing the Individual Data from the response ***************");
+				((ArrayList)v).forEach(v1->{
+					Map<String, Object> d1= (HashMap)v1;
+					d1.forEach((k2,v2)->{
+						System.out.println("The value of " +k2+"  is :" +v2);
+						
+					});
+					
+			});
+			});
+		} catch (JsonMappingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JsonProcessingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 
 }
