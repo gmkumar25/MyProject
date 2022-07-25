@@ -131,6 +131,7 @@ public class QoeProbePage {
 		Assert.assertTrue((Actual_Vlan_Dropdown_Default_Value.equals("All")),"Vlan Dropdown Default Value is not All");
 		Assert.assertTrue((Actual_Url_Dropdown_Default_Value.equals("All")),"URL Dropdown Default Value is not All");
 		driver.findElement(dropDown_Vlan).click();
+		waitForPageLoad();
 		List<WebElement> Vlan_Dropdown_Options = driver.findElements(dropDown_Options);
 		String[] Exp_VlanOptions_Array = {"All", "Crew Social", "Pax", "Corporate", "Crew Premium"};
 		ArrayList<String> Exp_VlanOptions = new ArrayList<String>();
