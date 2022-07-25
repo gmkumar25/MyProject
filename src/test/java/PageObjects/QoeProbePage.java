@@ -146,6 +146,7 @@ public class QoeProbePage {
 		Assert.assertTrue((Actual_Url_Dropdown_Default_Value.equals("All")),"URL Dropdown Default Value is not All");
 		driver.findElement(dropDown_Vlan).click();
 		waitForPageLoad();
+		new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(dropDown_Options));
 		List<WebElement> Vlan_Dropdown_Options = driver.findElements(dropDown_Options);
 		String[] Exp_VlanOptions_Array = {"All", "Crew Social", "Pax", "Corporate", "Crew Premium"};
 		ArrayList<String> Exp_VlanOptions = new ArrayList<String>();
@@ -161,6 +162,7 @@ public class QoeProbePage {
 		waitForPageLoad();
 		driver.findElement(dropDown_Url).click();
 		waitForPageLoad();
+		new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(dropDown_Options));
 		List<WebElement> URL_Dropdown_Options = driver.findElements(dropDown_Options);
 		String[] Exp_URLOptions_Array = {"All", "Netflix", "Google", "CNN", "Amazon", "ESPN", "Facebook", "Whatsapp"};
 		ArrayList<String> Exp_URLOptions = new ArrayList<String>();
