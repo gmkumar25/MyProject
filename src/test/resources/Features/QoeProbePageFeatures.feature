@@ -58,4 +58,9 @@ Feature: This feature covers test scenarios under the QoeProbe-page of Neuron_Fl
     Given I access the Neuron Fleet application
     When I navigate to the QOE Probe page
     Then I should be able to validate that data is displayed in the QOE probe Metrics section of QoeProbe Page
+    
+  @smoke
+  Scenario: TC010_Verify that the API call works in the QOE score Analysis
+  When I do a POST with required inputs in EndPoint URL of the QOE score Analysis
+  Then I should be able to verify the response
       
