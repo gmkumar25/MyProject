@@ -146,6 +146,7 @@ public class QoeProbePage {
 		driver.findElement(dropDown_Options).click();
 		waitForPageLoad();
 		driver.findElement(dropDown_Url).click();
+		waitForPageLoad();
 		List<WebElement> URL_Dropdown_Options = driver.findElements(dropDown_Options);
 		String[] Exp_URLOptions_Array = {"All", "Netflix", "Google", "CNN", "Amazon", "ESPN", "Facebook", "Whatsapp"};
 		ArrayList<String> Exp_URLOptions = new ArrayList<String>();
